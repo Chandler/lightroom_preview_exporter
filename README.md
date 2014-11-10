@@ -31,6 +31,6 @@ Example:
     writing: photos/DSC_2232.JPG
     ...
 
-If you don't have a catalog file or don't care about restoring the original filenames, you can use the extract_image.py script directly on individal preview files.
+If you don't have a catalog file or don't care about restoring the original filenames, you can use the extract_image.py script directly on individual preview files.
 
     ./extract_image.py path/to/single/preview.lrprev output
