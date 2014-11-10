@@ -40,12 +40,11 @@ if (uid or not uid_to_name):
     # embedded in it. We will store them all and write out only the highest resolution
     # at the end
     images        = []
-
-    # If this is true, it means our cursor is currently with 
-    reading_image = False
     image_number  = 0
     i             = 0
-
+    # The loop over all bytes uses this flag to track when it is and isn't passing through a jpeg.
+    reading_image = False
+    
     # Iterate through every byte in the preview binary 2 at a time.
     # scanning for JPEGS and storing them as byte arrays inside images[]
     while i + 3 < length:
