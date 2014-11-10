@@ -1,10 +1,20 @@
 This script extracts images from lightroom previews, useful if you lost your originals but still have the lightroom metadata.
 
-Example usage:
+This basic logic is:
+  1. Run Unix 'Strings' over the lightroom catalog file to extract out the original filenames based on a questionable regex. 
+  2. Scan the lightroom preview binaries for embedded jpegs and write out the largest one.
 
-./run.sh $path_to_lr_catalog $path_to_lr_previews_dir
+Alternatives: 
+- A faster c program by @maxmouchet that doesn't attempt to preserve original filenames.
+  https://github.com/maxmouchet/lrprev-extract
+- An official lightroom plugin from Adobe that I had issues with.
+  http://helpx.adobe.com/lightroom/kb/extract-previews-lightroom-4.html
 
-e.g.
+Usage:
+
+./run.sh path/to/lr/previews/dir path/to/output
+
+Example:
 
 ➜ git:(master) ✗ ./run.sh \
 /Users/cabraham/Pictures/Lightroom/Lightroom\ 4\ Catalog.lrcat \
@@ -18,6 +28,6 @@ writing: photos/DSC_9201.NEF
 writing: photos/DSC_2232.JPG
 ...
 
-If you don't have a catalog or don't care about restoring the original filenames, you can use the extract_image.py script directly on individal preview files.
+If you don't have a catalog file or don't care about restoring the original filenames, you can use the extract_image.py script directly on individal preview files.
 
 ./extract_image.py path/to/single/preview.lrprev output
