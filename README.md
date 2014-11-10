@@ -1,4 +1,8 @@
-This script extracts images from lightroom previews, useful if you lost your originals but still have the lightroom metadata.
+!!only tested with Lightroom 4!!
+ 
+This script extracts images from lightroom previews.
+
+This can be a lifesaver if you lost your original photos but still have your lightroom metadata. 
 
 This basic logic is:
   1. Run Unix 'Strings' over the lightroom catalog file to extract out the original filenames based on a questionable regex. 
@@ -12,22 +16,21 @@ Alternatives:
 
 Usage:
 
-./run.sh path/to/lr/previews/dir path/to/output
+    ./run.sh path/to/lr/previews/dir path/to/output
 
 Example:
 
-➜ git:(master) ✗ ./run.sh \
-/Users/cabraham/Pictures/Lightroom/Lightroom\ 4\ Catalog.lrcat \
-/Users/cabraham/Pictures/Lightroom/Lightroom\ 4\ Catalog\ Previews.lrdata \
-
-Gathering image filenames from catalog
-Extracting best avaliable images from previews
-writing: photos/DSC_8996.JPG
-writing: photos/DSC_9961.JPG
-writing: photos/DSC_9201.NEF
-writing: photos/DSC_2232.JPG
-...
+    ➜ git:(master) ✗ ./run.sh \
+    /Users/cabraham/Pictures/Lightroom/Lightroom\ 4\ Catalog.lrcat \
+    /Users/cabraham/Pictures/Lightroom/Lightroom\ 4\ Catalog\ Previews.lrdata \
+    Gathering image filenames from catalog
+    Extracting best avaliable images from previews
+    writing: photos/DSC_8996.JPG
+    writing: photos/DSC_9961.JPG
+    writing: photos/DSC_9201.NEF
+    writing: photos/DSC_2232.JPG
+    ...
 
 If you don't have a catalog file or don't care about restoring the original filenames, you can use the extract_image.py script directly on individal preview files.
 
-./extract_image.py path/to/single/preview.lrprev output
+    ./extract_image.py path/to/single/preview.lrprev output
