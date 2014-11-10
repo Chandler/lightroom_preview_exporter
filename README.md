@@ -18,3 +18,6 @@ writing: photos/DSC_9201.NEF
 writing: photos/DSC_2232.JPG
 ...
 
+If you don't have a catalog or don't care about restoring the original filenames, you can use the extract_image.py script directly on individal preview files.
+
+./extract_image.py path/to/single/preview.lrprev output
