@@ -1,11 +1,12 @@
+import pickle
 import re
 import sys
-import pickle
+
 uid_to_name = {}
 
 for line in sys.stdin:
   m = re.match(
-        '^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})(.+)(jpg|jpeg|tif|nef)A$',
+        '^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})(.+)(jpg|jpeg|tif|nef|gif)A$',
         line,
         re.IGNORECASE
       )

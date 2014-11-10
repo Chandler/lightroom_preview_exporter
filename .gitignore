@@ -1,9 +1,10 @@
 *.jpg
-*.tif
 *.JPG
 *.jpeg
-*.NEF
+*.JPEG
 *.nef
+*.NEF
+*.tif
 *.TIF
 photos
 previews
