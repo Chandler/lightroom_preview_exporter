@@ -16,7 +16,7 @@ Alternatives:
 
 Usage:
 
-    ./run.sh path/to/lr/previews/dir path/to/output
+    ./run.sh path/to/lr/catalog path/to/lr/previews/dir
 
 Example:
 
